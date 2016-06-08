@@ -1,5 +1,9 @@
 
-
+/**
+ * Skienna Chapter 7
+ * @author alantran
+ *
+ */
 public class ConstructAllSubsets {
 	boolean finished = false;
 	public static void main(String[] args){
