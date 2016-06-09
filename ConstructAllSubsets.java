@@ -15,19 +15,17 @@ public class ConstructAllSubsets {
 		
 	}
 	private void backTrack(boolean[] a, int k, int n){
-		boolean[] c = new boolean[2];
-		Integer ncandidates = 0;
+		boolean[] c ;
 		int i = 0;
 		
 		if(isASolution(a,k,n)){
 			processSolution(a,k,n);
 		}else {
 			//k = k + 1;
-			c = constructCandidates(a, k, n, c, ncandidates);
+			c = constructCandidates(a, k, n);
 			for( i = 0; i < c.length ; i++){
 				a[k] = c[i];
 				backTrack(a, k + 1, n);
-				if (finished) return;
 			}
 		}
 	}
@@ -46,8 +44,8 @@ public class ConstructAllSubsets {
 		
 	}
 	
-	private boolean[] constructCandidates(boolean[] a, int k, int n, boolean[] c, 
-			Integer ncandidates){
+	private boolean[] constructCandidates(boolean[] a, int k, int n){
+		boolean[] c = new boolean[2];
 		c[0] = true;
 		c[1] = false;
 		//ncandidates = 2;
